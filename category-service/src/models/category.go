@@ -1,8 +1,6 @@
 package models
 
 import (
-	"net/http"
-
 	"github.com/indraprasetya154/apollo-gateway/category-service/src/config"
 )
 
@@ -33,7 +31,6 @@ func FetchAllCategory() (Response, error) {
 		arrObj = append(arrObj, obj)
 	}
 
-	res.Status = http.StatusOK
 	res.Message = "Success"
 	res.Data = arrObj
 
