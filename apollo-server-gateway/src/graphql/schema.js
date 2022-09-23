@@ -43,7 +43,7 @@ const typeDefs = gql`
     type Query {
         heroes: [Hero]
         hero(id: ID!): Hero
-        categories: Category
+        categories: [Category]
     }
 
     type Mutation {

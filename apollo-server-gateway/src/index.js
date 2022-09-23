@@ -1,6 +1,5 @@
 import 'dotenv/config'
 import { ApolloServer } from 'apollo-server-express';
-import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import cors from "cors";
 import express from 'express';
 import helmet from 'helmet';
@@ -8,6 +7,7 @@ import http from 'http';
 import morgan from 'morgan'
 import typeDefs from './graphql/schema.js';
 import resolvers from './graphql/resolvers.js';
+import { CategoryAPI } from './graphql/data_sources/category.js';
 
 const PORT = process.env.PORT
 const NODE_ENV = process.env.NODE_ENV
@@ -39,7 +39,11 @@ async function startApolloServer(typeDefs, resolvers) {
     const server = new ApolloServer({
       typeDefs,
       resolvers,
-      plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+      dataSources: () => {
+        return {
+          categoryAPI: new CategoryAPI(),
+        };
+      },
     });
 
     await server.start();

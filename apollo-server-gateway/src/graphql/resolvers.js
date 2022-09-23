@@ -25,7 +25,11 @@ const resolvers = {
                     model: Abilities
                 }
             ] });
-        }
+        },
+        categories: async (_source, _args, { dataSources }) => {
+            console.log(dataSources.categoryAPI.getCategories())
+            return dataSources.categoryAPI.getCategories()
+        },
     },
     Mutation: {
         addHero: async (parent, args, context, info) => {
