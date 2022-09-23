@@ -1,0 +1,26 @@
+{
+  "name": "apollo-server-gateway",
+  "version": "1.0.0",
+  "description": "a gateway for rest api using apollo graphql",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Indra Prasetya",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-core": "^3.6.7",
+    "apollo-server-express": "^3.6.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "graphql": "^16.3.0",
+    "helmet": "^5.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.23.0"
+  }
+}
