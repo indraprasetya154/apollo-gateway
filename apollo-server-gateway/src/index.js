@@ -6,8 +6,8 @@ import express from 'express';
 import helmet from 'helmet';
 import http from 'http';
 import morgan from 'morgan'
-import typeDefs from './schema.js';
-import resolvers from './resolvers.js';
+import typeDefs from './graphql/schema.js';
+import resolvers from './graphql/resolvers.js';
 
 const PORT = process.env.PORT
 const NODE_ENV = process.env.NODE_ENV
