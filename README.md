@@ -1,5 +1,5 @@
 # Apollo Gateway
 
-## Implementing Apollo using Fullstack Method and Data Source
+### Implementing simple apollo server gateway as middleware and using data sources
 
 https://www.apollographql.com/docs/apollo-server
