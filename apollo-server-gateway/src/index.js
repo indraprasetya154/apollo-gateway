@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import { ApolloServer } from 'apollo-server-express';
+import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import cors from "cors";
 import express from 'express';
 import helmet from 'helmet';
@@ -39,6 +40,7 @@ async function startApolloServer(typeDefs, resolvers) {
     const server = new ApolloServer({
       typeDefs,
       resolvers,
+      plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
       dataSources: () => {
         return {
           categoryAPI: new CategoryAPI(),
