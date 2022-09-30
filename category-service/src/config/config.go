@@ -1,17 +1,14 @@
 package config
 
-import "github.com/tkanos/gonfig"
+import "github.com/spf13/viper"
 
-type Configuration struct {
-	DB_USERNAME string
-	DB_PASSWORD string
-	DB_HOST     string
-	DB_PORT     string
-	DB_NAME     string
-}
+func GetConfig() {
+	viper.AutomaticEnv()
+	viper.SetConfigType("env")
+	viper.SetConfigFile(".env")
 
-func GetConfig() Configuration {
-	conf := Configuration{}
-	gonfig.GetConf("config/config.json", &conf)
-	return conf
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(err)
+	}
 }

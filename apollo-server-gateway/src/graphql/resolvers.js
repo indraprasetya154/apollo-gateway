@@ -27,7 +27,6 @@ const resolvers = {
             ] });
         },
         categories: async (_source, _args, { dataSources }) => {
-            console.log(dataSources.categoryAPI.getCategories())
             return dataSources.categoryAPI.getCategories()
         },
     },

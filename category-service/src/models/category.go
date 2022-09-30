@@ -16,7 +16,7 @@ func FetchAllCategory() (Response, error) {
 
 	con := config.CreateCon()
 
-	rows, err := con.Query("SELECT * FROM categories")
+	rows, err := con.Query("SELECT id, name FROM categories")
 	if err != nil {
 		return res, err
 	}

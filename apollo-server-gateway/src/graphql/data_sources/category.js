@@ -8,7 +8,6 @@ export class CategoryAPI extends RESTDataSource {
 
   async getCategories() {
     const category = await this.get(`/category`);
-    console.log(category.data)
     return category.data;
   }
 }
